@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin: Manage Reviews - N.K. ATTA CHAKKI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="admin-page" class="subpage">
+    <header>
+        <nav>
+            <a href="index.html" class="logo">N.K. ATTA CHAKKI</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="admin-content" style="display: none;">
+                <h2>Manage Testimonials</h2>
+                
+                <form id="add-testimonial-form" class="admin-form">
+                    <h3>Add New Testimonial</h3>
+                    <div class="form-group">
+                        <label for="testimonial-name">Customer Name:</label>
+                        <input type="text" id="testimonial-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-quote">Review / Quote:</label>
+                        <textarea id="testimonial-quote" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-rating">Rating (1-10):</label>
+                        <input type="number" id="testimonial-rating" min="1" max="10" value="10" required>
+                    </div>
+                    <button type="submit" class="btn">Add Testimonial</button>
+                </form>
+
+                <div class="current-testimonials">
+                    <h3>Current Testimonials</h3>
+                    <div id="testimonials-list">
+                        <!-- Testimonials will be loaded here by script.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

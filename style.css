@@ -1,0 +1,721 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #d35400;
+    --light-bg: #fdf6e3;
+    --text-color: #34495e;
+    --light-text: #7f8c8d;
+    --white-color: #ffffff;
+    --border-color: #eeeeee;
+}
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+body.subpage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.subpage main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem 4rem;
+}
+
+.hero .hindi-tagline {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--light-text);
+}
+
+h2 .hindi-heading {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--light-text);
+    margin-top: 0.25rem;
+}
+
+/* Header & Navigation */
+header {
+    background: var(--primary-color);
+    color: var(--white-color);
+    z-index: 1000; /* ensure header and nav overlay page */
+    position: relative; /* keep stacking context */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    transform: translateY(-150%);
+    transition: transform 0.28s ease-in-out;
+    z-index: 999;
+    padding: 1rem 0;
+}
+
+nav .nav-links li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    display: block;
+    text-align: center;
+}
+
+nav .nav-links li a:hover {
+    color: var(--secondary-color);
+}
+
+nav .nav-links.active {
+    transform: translateY(0);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem 4rem;
+}
+
+.hero .hindi-tagline {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--light-text);
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 4rem 0;
+    background: var(--white-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.feature-item p {
+    color: var(--light-text);
+}
+
+/* General Button Style */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b84a00; /* Darker shade of secondary */
+}
+
+.back-to-home-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+/* Main Content & Products */
+main {
+    padding: 4rem 0;
+}
+
+.search-container {
+    margin: 0 auto 2.5rem;
+    position: relative;
+    max-width: 500px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--light-text);
+}
+
+#product-search {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 3rem; /* Add left padding for icon */
+    font-size: 1rem;
+    border-radius: 50px; /* Make it pill-shaped */
+    border: 1px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white-color);
+    transition: all 0.3s ease;
+}
+
+#product-search:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(211, 84, 0, 0.15);
+}
+
+#product-search::placeholder {
+    color: var(--light-text);
+}
+
+/* Filter Buttons */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    background-color: var(--white-color);
+    color: var(--text-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #ddd;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border-color: var(--secondary-color);
+}
+
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background-color: var(--white-color);
+    border-radius: 15px; /* Increased for a softer, curved look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.25rem; /* Adjusted padding for better alignment */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-details {
+    padding: 1rem;
+    color: var(--text-color);
+}
+
+.product-details h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-details p {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.product-footer .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.product-footer .best-for {
+    font-size: 0.9rem;
+    background-color: #ecf0f1;
+    color: var(--light-text);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 4rem 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-rating {
+    margin-bottom: 1rem;
+    color: #f39c12; /* Star color */
+}
+
+.testimonial-rating i {
+    margin-right: 2px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.testimonial-card cite {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-style: normal;
+}
+
+/* Admin Page Styles */
+.admin-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: .75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.current-testimonials h3 {
+    margin-bottom: 1rem;
+}
+
+.testimonial-item-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.testimonial-item-admin .delete-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Review CTA Section */
+.review-cta-section {
+    background-color: var(--white-color);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.review-cta-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--light-text);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.btn-review {
+    background-color: #27ae60; /* A green color for positive action */
+    font-size: 1.1rem;
+}
+
+.btn.btn-review:hover {
+    background-color: #229954;
+}
+
+/* Review page & iframe styles */
+.review-page .lead {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 1.25rem;
+}
+
+.review-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.review-iframe {
+    width: 100%;
+    height: 780px;
+    max-width: 100%;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Small fallback link styling */
+.embed-fallback {
+    margin-top: 0.75rem;
+    color: var(--light-text);
+}
+
+.embed-fallback a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 4rem 0 2rem;
+}
+
+footer h2 {
+    color: var(--white-color);
+}
+
+footer > .container > p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.social-links {
+    margin: 2rem 0;
+}
+
+.social-links a {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Home Button - floating on bottom-left */
+.home-button {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    z-index: 100;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.home-button:hover {
+    transform: translateY(-4px);
+    background-color: #223a4f; /* slightly darker */
+}
+
+/* Move back-to-top slightly to the right so they don't overlap */
+.back-to-top {
+    right: 2rem;
+    bottom: 2rem;
+}
+
+/* Ensure both buttons are not overlapping on smaller screens */
+@media (max-width: 480px) {
+    .home-button {
+        left: 1rem;
+        bottom: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+    }
+}
+
+/* Scroll Animations */
+.feature-item,
+.product-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.feature-item.visible,
+.product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 10;
+        list-style: none;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .review-iframe {
+        height: 700px;
+    }
+
+    /* prevent background scrolling when nav open */
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    /* improve readability inside menu */
+    .nav-links li {
+        padding: 0.6rem 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        color: var(--white-color);
+    }
+}

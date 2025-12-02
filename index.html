@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.K. ATTA CHAKKI - Product Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">N.K. ATTA CHAKKI</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="why-choose-us.html">Why Choose Us?</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="review.html">Write a Review</a></li> <!-- added -->
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>The Heart of Healthy Living</h1>
+            <p>Freshly Milled Flours, Straight from Our Mill to Your Home<br>
+                <span class="hindi-tagline">ताज़ा पिसा आटा, सीधे हमारी चक्की से आपके घर तक</span>
+            </p>
+        </div>
+    </header>
+
+    <main id="products">
+        <div class="container">
+            <h2>Our Products <span class="hindi-heading">हमारे उत्पाद</span></h2>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="search" id="product-search" placeholder="Search for flours..." aria-label="Search for products">
+            </div>
+            <div class="filter-container" id="filter-container">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="wheat-based">Wheat-Based</button>
+                <button class="filter-btn" data-category="gluten-free">Gluten-Free</button>
+            </div>
+            <div id="product-catalog" class="catalog-container">
+                <!-- Products will be dynamically inserted here by script.js -->
+            </div>
+        </div>
+    </main>
+
+    <section class="review-cta-section">
+        <div class="container">
+            <h2>We Value Your Feedback <span class="hindi-heading">आपकी राय हमारे लिए महत्वपूर्ण है</span></h2>
+            <p>Have you tried our products? Share your experience with us and the community!</p>
+            <a href="review.html" class="btn btn-review" target="_blank" rel="noopener noreferrer">Write a Review</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact Us <span class="hindi-heading">हमसे संपर्क करें</span></h2>
+            <p>Visit us or get in touch for fresh and healthy flour.</p>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> B-2/4, Near Laxminarayan Mandir, Gulabi Market, Ashok Vihar, Delhi-110052</p>
+                <p><i class="fas fa-phone"></i> 9811124817</p>
+                <p><i class="fas fa-envelope"></i> contact@nkattahakki.com</p>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/919811124817" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 N.K. ATTA CHAKKI. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <a href="index.html" class="home-button" id="home-button" aria-label="Home">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
